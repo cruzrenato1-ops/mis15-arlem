@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Invitación | Mis 15 Arlem - Princesa Tiana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #1e3a2f;
+            font-family: 'Montserrat', sans-serif;
+            color: #2c2b28;
+            line-height: 1.5;
+        }
+
+        .invitation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fffef7;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        section {
+            padding: 5rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(60, 80, 60, 0.15);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3, .script-text, .invitation-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2a6b47;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 25%;
+            width: 50%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #c9a87b, #c9a87b, transparent);
+        }
+
+        .subheading {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #7f9a6e;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        /* Hero con imagen de fondo temática */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+            /*background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1582653291997-079a1b04e6a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;*/
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('15.jpeg') center/cover no-repeat;
+            border-bottom: none;
+            color: white;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 58, 47, 0.3);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            position: relative;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .invitation-title {
+            font-size: 4rem;
+            font-weight: 300;
+            color: #f9e6c2;
+            margin-bottom: 0.5rem;
+            letter-spacing: 4px;
+        }
+
+        .hero-name {
+            font-size: 5rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .hero-date {
+            font-size: 1.8rem;
+            font-family: 'Cormorant Garamond', serif;
+            border-top: 1px solid rgba(255,255,200,0.8);
+            border-bottom: 1px solid rgba(255,255,200,0.8);
+            display: inline-block;
+            padding: 0.5rem 1.8rem;
+            margin-top: 1rem;
+            color: #ffefcf;
+        }
+
+        .tiana-badge {
+            margin-top: 1rem;
+            background: rgba(0,0,0,0.5);
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+        }
+
+        .tiana-image {
+            margin: 2rem auto 1rem;
+            text-align: center;
+        }
+        .tiana-avatar {
+            display: inline-block;
+            background: #f9f0df;
+            border-radius: 50%;
+            padding: 1rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            border: 3px solid #c9a87b;
+        }
+        .tiana-avatar svg {
+            width: 100px;
+            height: 100px;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+        }
+        .tiana-avatar p {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #2a6b47;
+        }
+        .real-image-note {
+            font-size: 0.7rem;
+            color: #6b4c3b;
+            background: #fff0e0;
+            display: inline-block;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            margin-top: 5px;
+        }
+
+        .music-control {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border: 1px solid #c5b28b;
+        }
+
+        .music-control i {
+            font-size: 1.5rem;
+            color: #2a6b47;
+        }
+
+        .message {
+            background: #fef9ed;
+        }
+
+        .message-text {
+            font-size: 1.3rem;
+            font-family: 'Cormorant Garamond', serif;
+            max-width: 700px;
+            margin: 1.5rem auto;
+            line-height: 1.7;
+            font-style: italic;
+            color: #2f4d3c;
+        }
+
+        .countdown-section {
+            background: #f2f0e6;
+        }
+
+        .countdown-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .time-box {
+            background: white;
+            padding: 1rem 1.8rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            min-width: 100px;
+            border: 1px solid #d4ddc4;
+        }
+
+        .time-number {
+            font-size: 2.5rem;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            color: #2a6b47;
+        }
+
+        .time-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #7e9a6b;
+        }
+
+        .event-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .detail-card {
+            flex: 1;
+            min-width: 260px;
+            background: #fefcf5;
+            padding: 1.8rem 1rem;
+            border-radius: 28px;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid #e2e0cf;
+        }
+
+        .detail-card i {
+            font-size: 2rem;
+            color: #4c8b5e;
+            margin-bottom: 1rem;
+        }
+
+        .detail-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #3c6b47;
+        }
+
+        .dresscode-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #e0ebd6;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            margin: 1rem 0;
+        }
+
+        .color-sample {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .color-green {
+            background: #2a6b47;
+            box-shadow: 0 0 0 2px #fef6e8;
+        }
+
+        .btn-rsvp {
+            background: #2a6b47;
+            color: white;
+            border: none;
+            padding: 14px 40px;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: 0.25s;
+            margin: 1rem 0;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .btn-rsvp:hover {
+            background: #1e5439;
+            transform: scale(1.02);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            max-width: 450px;
+            width: 90%;
+            padding: 2rem;
+            border-radius: 28px;
+            text-align: center;
+            position: relative;
+            border-top: 6px solid #c9a87b;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px; right: 20px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #2a6b47;
+        }
+
+        .form-group {
+            margin: 1.2rem 0;
+            text-align: left;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5c0;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            background: #fefcf9;
+        }
+
+        button[type="submit"] {
+            background: #2a6b47;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .gift-alias {
+            background: #f3ebe4;
+            padding: 1rem;
+            border-radius: 50px;
+            display: inline-block;
+            font-family: monospace;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .tiana-flower {
+            font-size: 1.2rem;
+            color: #b28b5e;
+        }
+
+        footer {
+            background: #dce6d4;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #2f533f;
+        }
+
+        @media (max-width: 700px) {
+            .hero-name { font-size: 3.2rem; }
+            .invitation-title { font-size: 2.2rem; }
+            section { padding: 3rem 1.5rem; }
+            .time-box { padding: 0.5rem 1rem; min-width: 70px; }
+            .time-number { font-size: 1.8rem; }
+            .tiana-avatar svg { width: 70px; height: 70px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="invitation-container">
+    <!-- Hero principal -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="invitation-title">Mis 15 años</div>
+            <div class="hero-name">Arlem</div>
+            <div class="hero-date">Sábado 30 de Mayo 2026</div>
+            <div class="tiana-badge"><i class="fas fa-crown"></i> “Soñando como la Princesa Tiana” <i class="fas fa-frog"></i></div>
+            <p style="margin-top: 2rem; font-size: 1rem;">🎵 Dale play y escucha la canción "Evangelina"</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CON IMAGEN DE LA PRINCESA TIANA -->
+    <section class="message" style="padding-top: 2rem; padding-bottom: 2rem;">
+        <div class="container">
+            <div class="tiana-image">
+                <div class="tiana-avatar">
+                    <!-- SVG de una rana con corona (representando a Tiana en su forma de rana, icónico de la película) -->
+                     <img src="Tiana.png" alt="Arlem como Tiana" style="width:100px; border-radius:50%;">
+                     <!-- <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" fill="#5B8C5A" stroke="#C9A87B" stroke-width="2"/>
+                        <circle cx="35" cy="40" r="6" fill="white" stroke="#2C5E3F" stroke-width="1.5"/>
+                        <circle cx="65" cy="40" r="6" fill="white" stroke="#2C5E3F" stroke-width="1.5"/>
+                        <circle cx="35" cy="40" r="2.5" fill="#2C5E3F"/>
+                        <circle cx="65" cy="40" r="2.5" fill="#2C5E3F"/>
+                        <path d="M45 60 Q50 68 55 60" stroke="#2C5E3F" stroke-width="2" fill="none"/>
+                        <path d="M25 70 L35 75 L30 65 Z" fill="#C9A87B"/>
+                        <path d="M75 70 L65 75 L70 65 Z" fill="#C9A87B"/>
+                        <path d="M50 20 L54 28 L62 28 L56 33 L58 41 L50 36 L42 41 L44 33 L38 28 L46 28 Z" fill="#FFD966" stroke="#C9A87B" stroke-width="1"/>
+                        <text x="50" y="90" text-anchor="middle" font-size="8" fill="#F9E6C2" font-weight="bold">Tiana</text>
+                    </svg>-->
+                    <p>✨ Princesa Tiana ✨</p>
+                </div>
+                <!--<p class="real-image-note"><i class="fas fa-image"></i> Puedes reemplazar este dibujo por una foto real de la Princesa Tiana o de Arlem caracterizada</p>-->
+            </div>
+        </div>
+    </section>
+
+    <!-- MENSAJE PERSONAL -->
+    <section class="message">
+        <div class="container">
+            <div class="subheading">Con mucha ilusión</div>
+            <div class="message-text">
+                <i class="fas fa-leaf tiana-flower"></i> <i class="fas fa-frog tiana-flower"></i> <i class="fas fa-crown tiana-flower"></i><br>
+                Quiero invitarte a compartir este día tan especial, donde mis sueños se visten de verde y magia. 
+                Tú eres parte importante de mi historia, y me encantaría tenerte a mi lado en esta celebración.
+                <br><i class="fas fa-feather-alt"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUENTA REGRESIVA -->
+    <section class="countdown-section">
+        <div class="container">
+            <h2>Faltan para el gran día</h2>
+            <div class="countdown-wrapper" id="countdown">
+                <div class="time-box"><div class="time-number" id="days">00</div><div class="time-label">Días</div></div>
+                <div class="time-box"><div class="time-number" id="hours">00</div><div class="time-label">Horas</div></div>
+                <div class="time-box"><div class="time-number" id="minutes">00</div><div class="time-label">Minutos</div></div>
+                <div class="time-box"><div class="time-number" id="seconds">00</div><div class="time-label">Segundos</div></div>
+            </div>
+            <p style="margin-top: 0.5rem;">✨ Soñar es el primer paso ✨</p>
+        </div>
+    </section>
+
+    <!-- DETALLES DEL EVENTO -->
+    <section>
+        <div class="container">
+            <h2>Santa Eucaristía & Celebración</h2>
+            <div class="event-details">
+                <div class="detail-card">
+                    <i class="fas fa-church"></i>
+                    <h3>Santa Misa</h3>
+                    <p>5:00 PM</p>
+                    <p>Parroquia Santo Tomás Apóstol</p>
+                    <p>Catacamas, Olancho</p>
+                </div>
+                <div class="detail-card">
+                    <i class="fas fa-glass-cheers"></i>
+                    <h3>Recepción</h3>
+                    <p>7:00 PM</p>
+                    <p>Colegio de Abogados, Catacamas</p>
+                    <p>Calle principal hacia Santa María del Real</p>
+                </div>
+            </div>
+            <div class="dresscode-badge">
+                <span class="color-sample color-green"></span>
+                <span><strong>Color reservado:</strong> Verde para la quinceañera</span>
+            </div>
+            <p><i class="fas fa-heart" style="color:#c6a15b;"></i> Te invitamos a vestir elegante y acompañar a Arlem en este paso tan soñado.</p>
+        </div>
+    </section>
+
+    <!-- CONFIRMACIÓN Y REGALO -->
+    <section>
+        <div class="container">
+            <h2>Confirmar Asistencia</h2>
+            <p><strong>📅 Fecha límite para confirmar: Viernes 22 de Mayo</strong><br>
+            Por favor confirma por WhatsApp antes de esa fecha para ayudarnos con los preparativos.</p>
+            <button id="openModalBtn" class="btn-rsvp">CONFIRMAR ASISTENCIA <i class="fab fa-whatsapp"></i></button>
+            <div style="margin-top: 2rem;">
+                <h3 style="margin-bottom: 0.5rem;">🎁 Mi mayor regalo es tu presencia</h3>
+                <p>Si me deseas obsequiar algo, en efectivo se sabrá apreciar</p>
+                <div class="gift-alias">
+                    <i class="fas fa-hand-holding-usd"></i> Regalo en efectivo
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>🌸 ¡Te espero para compartir juntos un cuento de hadas hecho realidad! 🌸</p>
+        <p>Arlem ✨ <i class="fas fa-frog"></i> <i class="fas fa-crown"></i></p>
+    </footer>
+</div>
+
+<!-- MODAL RSVP -->
+<div id="rsvpModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3 style="margin-bottom: 1rem;">Confirmar asistencia a mis 15</h3>
+        <p style="font-size: 0.9rem;">Antes del <strong>22 de mayo</strong>, por favor completa tus datos y serás redirigido a WhatsApp.</p>
+        <form id="rsvpForm">
+            <div class="form-group"><input type="text" id="nombre" placeholder="Tu nombre completo" required></div>
+            <div class="form-group">
+                <select id="asistencia" required>
+                    <option value="">¿Asistirás?</option>
+                    <option value="Sí, estaré presente">¡Sí, voy a acompañar a Arlem!</option>
+                    <option value="No podré asistir">No podré asistir, pero la llevo en mi corazón</option>
+                </select>
+            </div>
+            <div class="form-group"><input type="number" id="acompanantes" placeholder="¿Con cuántas personas vienes? (opcional)" min="0" value="0"></div>
+            <button type="submit">Enviar por WhatsApp <i class="fab fa-whatsapp"></i></button>
+        </form>
+        <p id="formMsg" style="margin-top: 0.7rem; font-size: 0.8rem;"></p>
+    </div>
+</div>
+
+<!-- CONTROL DE MÚSICA -->
+<div class="music-control" id="musicToggle">
+    <i class="fas fa-music"></i>
+</div>
+<audio id="bgMusic" loop preload="auto">
+    <source allow="autoplay" src="Evageline.mp3" type="audio/mpeg">
+    Tu navegador no soporta la reproducción de audio.
+</audio>
+
+<script>
+    // FECHA: 30 de Mayo de 2026 (puedes cambiar el año)
+    const eventDate = new Date(2026, 4, 30, 17, 0, 0);
+    
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+        if (distance < 0) {
+            document.getElementById('days').innerHTML = "00";
+            document.getElementById('hours').innerHTML = "00";
+            document.getElementById('minutes').innerHTML = "00";
+            document.getElementById('seconds').innerHTML = "00";
+            return;
+        }
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (86400000)) / (3600000));
+        const minutes = Math.floor((distance % 3600000) / 60000);
+        const seconds = Math.floor((distance % 60000) / 1000);
+        document.getElementById('days').innerHTML = days < 10 ? '0' + days : days;
+        document.getElementById('hours').innerHTML = hours < 10 ? '0' + hours : hours;
+        document.getElementById('minutes').innerHTML = minutes < 10 ? '0' + minutes : minutes;
+        document.getElementById('seconds').innerHTML = seconds < 10 ? '0' + seconds : seconds;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Música
+    const music = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicToggle');
+    let isPlaying = false;
+    musicBtn.addEventListener('click', () => {
+        if(isPlaying) {
+            music.pause();
+            musicBtn.style.opacity = "0.7";
+            musicBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+        } else {
+            music.play().catch(e => console.log("Autoplay bloqueado:", e));
+            musicBtn.style.opacity = "1";
+            musicBtn.innerHTML = '<i class="fas fa-music"></i>';
+        }
+        isPlaying = !isPlaying;
+    });
+    document.body.addEventListener('click', function initAudio() {
+        if (!isPlaying) {
+            music.play().then(() => { isPlaying = true; musicBtn.innerHTML = '<i class="fas fa-music"></i>'; }).catch(()=>{});
+        }
+    }, { once: true });
+
+    // Modal y WhatsApp
+    const modal = document.getElementById('rsvpModal');
+    const openBtn = document.getElementById('openModalBtn');
+    const closeSpan = document.querySelector('.close-modal');
+    openBtn.onclick = () => modal.style.display = 'flex';
+    closeSpan.onclick = () => modal.style.display = 'none';
+    window.onclick = (e) => { if(e.target === modal) modal.style.display = 'none'; };
+
+    // Cambia este número por el WhatsApp de la organizadora (código país + número)
+    const TELEFANO_ORGANIZADOR = "50492427147"; // REEMPLAZAR
+
+    const rsvpForm = document.getElementById('rsvpForm');
+    const formMsg = document.getElementById('formMsg');
+
+    rsvpForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const nombre = document.getElementById('nombre').value.trim();
+        const asistencia = document.getElementById('asistencia').value;
+        let acompanantes = document.getElementById('acompanantes').value;
+        if (!nombre || !asistencia) {
+            formMsg.innerText = "Por favor, completa tu nombre y si asistirás.";
+            formMsg.style.color = "#b1624b";
+            return;
+        }
+        if (acompanantes === "") acompanantes = "0";
+        
+        let mensaje = `*Confirmación de asistencia - 15 años de Arlem (Princesa Tiana)*%0A%0A`;
+        mensaje += `Nombre: ${encodeURIComponent(nombre)}%0A`;
+        mensaje += `Asistencia: ${encodeURIComponent(asistencia)}%0A`;
+        mensaje += `Acompañantes: ${acompanantes}%0A%0A`;
+        mensaje += `📅 Fecha: Sábado 30 de Mayo, 5pm Santa Misa / 7pm Recepción%0A`;
+        mensaje += `✅ Confirmación antes del 22 de mayo. ¡Gracias! 💚🐸👑`;
+        
+        const urlWhatsApp = `https://wa.me/${TELEFANO_ORGANIZADOR}?text=${mensaje}`;
+        window.open(urlWhatsApp, '_blank');
+        formMsg.innerText = "✅ Abriendo WhatsApp... Envía el mensaje para confirmar.";
+        formMsg.style.color = "#2a6b47";
+        
+        setTimeout(() => {
+            modal.style.display = 'none';
+            rsvpForm.reset();
+            formMsg.innerText = "";
+        }, 2000);
+    });
+</script>
+</body>
+</html>
